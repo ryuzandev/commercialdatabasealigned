@@ -28,6 +28,10 @@ const GoogleClone = () => {
         <div className="gc-result-item" onClick={() => navigate('/sony')}>Sony</div>
         <div className="gc-result-item" onClick={() => navigate('/samsung')}>Samsung</div>
         <div className="gc-result-item" onClick={() => navigate('/lg')}>LG</div>
+        <div className="gc-result-item" onClick={() => navigate('/ifb')}>IFB</div>
+        <div className="gc-result-item" onClick={() => navigate('/whirlpool')}>WHIRLPOOL</div>
+        <div className="gc-result-item" onClick={() => navigate('/onida')}>ONIDA</div>
+        {/* <div className="gc-result-item" onClick={() => navigate('/phillips')}>PHILLIPS</div> */}
       </div>
     </div>
   );

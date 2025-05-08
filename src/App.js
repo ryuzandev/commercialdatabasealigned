@@ -59,6 +59,87 @@ import SonyChatbot from "./sonycomponents/components/AssestComponents/Chatbot";
 import SonyContactUsFloating from "./sonycomponents/components/AssestComponents/ContactUsFloating";
 // SONY COMPONENTS END HERE----------------------------------------------->
 
+// Importing Components FOR ifbcomponents------------------------------> start
+import IfbOffers from "./ifb/components/Offers";
+import IfbNavbar from "./ifb/components/Navbar";
+import IfbNavbarCommon from "./ifb/components/NavbarCommon";
+import IfbCarousal from "./ifb/components/Carousal";
+import IfbGridMultiService from "./ifb/components/GridMultiService";
+import IfbFooter from "./ifb/components/Footer";
+import IfbBookNowCards from "./ifb/components/BookNowCards";
+import IfbTroubleshootCards from "./ifb/components/TroubleshootCards";
+import IfbChimney from "./ifb/components/ChimneyComponent";
+import IfbWashingMachine from "./ifb/components/WashingMachine";
+import IfbMicroWave from "./ifb/components/MicroWave";
+import IfbAirConditioner from "./ifb/components/AirConditioner";
+// import { ProductData } from "./ProductData";
+import IfbAllProducts from "./ifb/components/AllProducts";
+import IfbRefrigerator from "./ifb/components/Refrigerator";
+import IfbDishwasher from "./ifb/components/DishWasher";
+import IfbChatbot from "./ifb/components/AssestComponents/Chatbot";
+import IfbContactUsFloating from "./ifb/components/AssestComponents/ContactUsFloating";
+// importing Components FOR ifbcomponents------------------------------> end
+// Importing Components FOR ONIDAcomponents------------------------------> start
+import OnidaOffers from "./onida/components/Offers";
+import OnidaNavbar from "./onida/components/Navbar";
+import OnidaNavbarCommon from "./onida/components/NavbarCommon";
+import OnidaCarousal from "./onida/components/Carousal";
+import OnidaGridMultiService from "./onida/components/GridMultiService";
+import OnidaFooter from "./onida/components/Footer";
+import OnidaBookNowCards from "./onida/components/BookNowCards";
+import OnidaTroubleshootCards from "./onida/components/TroubleshootCards";
+import OnidaTvComponent from "./onida/components/TvComponent";
+import OnidaWashingMachine from "./onida/components/WashingMachine";
+import OnidaMicroWave from "./onida/components/MicroWave";
+import OnidaAirConditioner from "./onida/components/AirConditioner";
+// import { ProductData } from "./ProductData";
+import OnidaAllProducts from "./onida/components/AllProducts";
+import OnidaRefrigerator from "./onida/components/Refrigerator";
+import OnidaDishwasher from "./onida/components/DishWasher";
+import OnidaChatbot from "./onida/components/AssestComponents/Chatbot";
+import OnidaContactUsFloating from "./onida/components/AssestComponents/ContactUsFloating";
+// importing Components FOR ONIDAcomponents------------------------------> end
+// Importing Components FOR WHIRLPOOLcomponents------------------------------> start
+import WpOffers from "./whirlpool/components/Offers";
+import WpNavbar from "./whirlpool/components/Navbar";
+import WpNavbarCommon from "./whirlpool/components/NavbarCommon";
+import WpCarousal from "./whirlpool/components/Carousal";
+import WpGridMultiService from "./whirlpool/components/GridMultiService";
+import WpFooter from "./whirlpool/components/Footer";
+import WpBookNowCards from "./whirlpool/components/BookNowCards";
+import WpTroubleshootCards from "./whirlpool/components/TroubleshootCards";
+import WpTvComponent from "./whirlpool/components/TvComponent";
+import WpWashingMachine from "./whirlpool/components/WashingMachine";
+import WpMicroWave from "./whirlpool/components/MicroWave";
+import WpAirConditioner from "./whirlpool/components/AirConditioner";
+// import { ProductData } from "./ProductData";
+import WpAllProducts from "./whirlpool/components/AllProducts";
+import WpRefrigerator from "./whirlpool/components/Refrigerator";
+import WpDishwasher from "./whirlpool/components/DishWasher";
+import WpChatbot from "./whirlpool/components/AssestComponents/Chatbot";
+import WpContactUsFloating from "./whirlpool/components/AssestComponents/ContactUsFloating";
+// importing Components FOR WHIRLPOOLcomponents------------------------------> end
+// Importing Components FOR PHILLIPScomponents------------------------------> start
+import PhillipsOffers from "./phillips/components/Offers";
+import PhillipsNavbar from "./phillips/components/Navbar";
+import PhillipsNavbarCommon from "./phillips/components/NavbarCommon";
+import PhillipsCarousal from "./phillips/components/Carousal";
+import PhillipsGridMultiService from "./phillips/components/GridMultiService";
+import PhillipsFooter from "./phillips/components/Footer";
+import PhillipsBookNowCards from "./phillips/components/BookNowCards";
+import PhillipsTroubleshootCards from "./phillips/components/TroubleshootCards";
+import PhillipsTvComponent from "./phillips/components/TvComponent";
+import PhillipsWashingMachine from "./phillips/components/WashingMachine";
+import PhillipsMicroWave from "./phillips/components/MicroWave";
+import PhillipsAirConditioner from "./phillips/components/AirConditioner";
+// import { ProductData } from "./ProductData";
+import PhillipsAllProducts from "./phillips/components/AllProducts";
+import PhillipsRefrigerator from "./phillips/components/Refrigerator";
+import PhillipsDishwasher from "./phillips/components/DishWasher";
+import PhillipsChatbot from "./phillips/components/AssestComponents/Chatbot";
+import PhillipsContactUsFloating from "./phillips/components/AssestComponents/ContactUsFloating";
+// importing Components FOR PHILLIPScomponents------------------------------> end
+
 // DEMO COMPONENTS START---------->
 import GoogleClone from "./democomponents/GoogleClone";
 // DEMO COMPONENTS END  ---------->
@@ -542,6 +623,611 @@ function App() {
             }
           />
           {/* SONY COMPONENTS END HERE   ---------------------------> */}
+
+          {/* IFB COMPONENTS START HERE ---------------------------> */}
+          <Route
+            path="ifb/"
+            element={
+              <>
+                <IfbOffers />
+                <IfbNavbarCommon />
+                <IfbCarousal />
+                <IfbGridMultiService />
+                <IfbChatbot />
+                <IfbContactUsFloating />
+                <IfbFooter />
+              </>
+            }
+          />
+
+          {/* BookNow Page */}
+          <Route
+            path="ifb/book-now"
+            element={
+              <>
+                <IfbOffers />
+                <IfbNavbar />
+                <IfbBookNowCards />
+                <IfbChatbot />
+                <IfbContactUsFloating />
+                <IfbFooter />
+              </>
+            }
+          />
+
+          {/* Troubleshoot Page */}
+          <Route
+            path="ifb/troubleshoot"
+            element={
+              <>
+                <IfbOffers />
+                <IfbNavbar />
+                <IfbTroubleshootCards />
+                <IfbChatbot />
+                <IfbContactUsFloating />
+                <IfbFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="ifb/chimney"
+            element={
+              <>
+                <IfbOffers />
+                <IfbNavbar />
+                <IfbChimney />
+                <IfbChatbot />
+                <IfbContactUsFloating />
+                <IfbFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="ifb/washing"
+            element={
+              <>
+                <IfbOffers />
+                <IfbNavbar />
+                <IfbWashingMachine />
+                <IfbChatbot />
+                <IfbContactUsFloating />
+                <IfbFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="ifb/microwave"
+            element={
+              <>
+                <IfbOffers />
+                <IfbNavbar />
+                <IfbMicroWave />
+                <IfbChatbot />
+                <IfbContactUsFloating />
+                <IfbFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="ifb/Refrigerator"
+            element={
+              <>
+                <IfbOffers />
+                <IfbNavbar />
+                <IfbRefrigerator />
+                <IfbChatbot />
+                <IfbContactUsFloating />
+                <IfbFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="ifb/DishWasher"
+            element={
+              <>
+                <IfbOffers />
+                <IfbNavbar />
+                <IfbDishwasher />
+                <IfbChatbot />
+                <IfbContactUsFloating />
+                <IfbFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="ifb/aircondition"
+            element={
+              <>
+                <IfbOffers />
+                <IfbNavbar />
+                <IfbAirConditioner />
+                <IfbChatbot />
+                <IfbContactUsFloating />
+                <IfbFooter />
+              </>
+            }
+          />
+
+          {/* All products Page */}
+          <Route
+            path="ifb/products"
+            element={
+              <>
+                <IfbOffers />
+                <IfbNavbar />
+                <IfbAllProducts />
+                <IfbChatbot />
+                <IfbContactUsFloating />
+                <IfbFooter />
+              </>
+            }
+          />
+          {/* IFB COMPONENTS END HERE -------------------------->  */}
+          {/* ONIDA COMPONENTS START HERE ---------------------------> */}
+          <Route
+            path="onida/"
+            element={
+              <>
+                <OnidaOffers />
+                <OnidaNavbarCommon />
+                <OnidaCarousal />
+                <OnidaGridMultiService />
+                <OnidaChatbot />
+                <OnidaContactUsFloating />
+                <OnidaFooter />
+              </>
+            }
+          />
+
+          {/* BookNow Page */}
+          <Route
+            path="onida/book-now"
+            element={
+              <>
+                <OnidaOffers />
+                <OnidaNavbar />
+                <OnidaBookNowCards />
+                <OnidaChatbot />
+                <OnidaContactUsFloating />
+                <OnidaFooter />
+              </>
+            }
+          />
+
+          {/* Troubleshoot Page */}
+          <Route
+            path="onida/troubleshoot"
+            element={
+              <>
+                <OnidaOffers />
+                <OnidaNavbar />
+                <OnidaTroubleshootCards />
+                <OnidaChatbot />
+                <OnidaContactUsFloating />
+                <OnidaFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="onida/tv"
+            element={
+              <>
+                <OnidaOffers />
+                <OnidaNavbar />
+                <OnidaTvComponent />
+                <OnidaChatbot />
+                <OnidaContactUsFloating />
+                <OnidaFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="onida/washing"
+            element={
+              <>
+                <OnidaOffers />
+                <OnidaNavbar />
+                <OnidaWashingMachine />
+                <OnidaChatbot />
+                <OnidaContactUsFloating />
+                <OnidaFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="onida/microwave"
+            element={
+              <>
+                <OnidaOffers />
+                <OnidaNavbar />
+                <OnidaMicroWave />
+                <OnidaChatbot />
+                <OnidaContactUsFloating />
+                <OnidaFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="onida/Refrigerator"
+            element={
+              <>
+                <OnidaOffers />
+                <OnidaNavbar />
+                <OnidaRefrigerator />
+                <OnidaChatbot />
+                <OnidaContactUsFloating />
+                <OnidaFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="onida/DishWasher"
+            element={
+              <>
+                <OnidaOffers />
+                <OnidaNavbar />
+                <OnidaDishwasher />
+                <OnidaChatbot />
+                <OnidaContactUsFloating />
+                <OnidaFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="onida/aircondition"
+            element={
+              <>
+                <OnidaOffers />
+                <OnidaNavbar />
+                <OnidaAirConditioner />
+                <OnidaChatbot />
+                <OnidaContactUsFloating />
+                <OnidaFooter />
+              </>
+            }
+          />
+
+          {/* All products Page */}
+          <Route
+            path="onida/products"
+            element={
+              <>
+                <OnidaOffers />
+                <OnidaNavbar />
+                <OnidaAllProducts />
+                <OnidaChatbot />
+                <OnidaContactUsFloating />
+                <OnidaFooter />
+              </>
+            }
+          />
+          {/* ONIDA COMPONENTS END HERE -------------------------->  */}
+          {/* WHIRLPOOL COMPONENTS START HERE ---------------------------> */}
+          <Route
+            path="whirlpool/"
+            element={
+              <>
+                <WpOffers />
+                <WpNavbarCommon />
+                <WpCarousal />
+                <WpGridMultiService />
+                <WpChatbot />
+                <WpContactUsFloating />
+                <WpFooter />
+              </>
+            }
+          />
+
+          {/* BookNow Page */}
+          <Route
+            path="whirlpool/book-now"
+            element={
+              <>
+                <WpOffers />
+                <WpNavbar />
+                <WpBookNowCards />
+                <WpChatbot />
+                <WpContactUsFloating />
+                <WpFooter />
+              </>
+            }
+          />
+
+          {/* Troubleshoot Page */}
+          <Route
+            path="whirlpool/troubleshoot"
+            element={
+              <>
+                <WpOffers />
+                <WpNavbar />
+                <WpTroubleshootCards />
+                <WpChatbot />
+                <WpContactUsFloating />
+                <WpFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="whirlpool/tv"
+            element={
+              <>
+                <WpOffers />
+                <WpNavbar />
+                <WpTvComponent />
+                <WpChatbot />
+                <WpContactUsFloating />
+                <WpFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="whirlpool/washing"
+            element={
+              <>
+                <WpOffers />
+                <WpNavbar />
+                <WpWashingMachine />
+                <WpChatbot />
+                <WpContactUsFloating />
+                <WpFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="whirlpool/microwave"
+            element={
+              <>
+                <WpOffers />
+                <WpNavbar />
+                <WpMicroWave />
+                <WpChatbot />
+                <WpContactUsFloating />
+                <WpFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="whirlpool/Refrigerator"
+            element={
+              <>
+                <WpOffers />
+                <WpNavbar />
+                <WpRefrigerator />
+                <WpChatbot />
+                <WpContactUsFloating />
+                <WpFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="whirlpool/DishWasher"
+            element={
+              <>
+                <WpOffers />
+                <WpNavbar />
+                <WpDishwasher />
+                <WpChatbot />
+                <WpContactUsFloating />
+                <WpFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="whirlpool/aircondition"
+            element={
+              <>
+                <WpOffers />
+                <WpNavbar />
+                <WpAirConditioner />
+                <WpChatbot />
+                <WpContactUsFloating />
+                <WpFooter />
+              </>
+            }
+          />
+
+          {/* All products Page */}
+          <Route
+            path="whirlpool/products"
+            element={
+              <>
+                <WpOffers />
+                <WpNavbar />
+                <WpAllProducts />
+                <WpChatbot />
+                <WpContactUsFloating />
+                <WpFooter />
+              </>
+            }
+          />
+          {/* WHIRLPOOL COMPONENTS END HERE -------------------------->  */}
+          {/* PHILLIPS COMPONENTS START HERE ---------------------------> */}
+          <Route
+            path="phillips/"
+            element={
+              <>
+                <PhillipsOffers />
+                <PhillipsNavbarCommon />
+                <PhillipsCarousal />
+                <PhillipsGridMultiService />
+                <PhillipsChatbot />
+                <PhillipsContactUsFloating />
+                <PhillipsFooter />
+              </>
+            }
+          />
+
+          {/* BookNow Page */}
+          <Route
+            path="phillips/book-now"
+            element={
+              <>
+                <PhillipsOffers />
+                <PhillipsNavbar />
+                <PhillipsBookNowCards />
+                <PhillipsChatbot />
+                <PhillipsContactUsFloating />
+                <PhillipsFooter />
+              </>
+            }
+          />
+
+          {/* Troubleshoot Page */}
+          <Route
+            path="phillips/troubleshoot"
+            element={
+              <>
+                <PhillipsOffers />
+                <PhillipsNavbar />
+                <PhillipsTroubleshootCards />
+                <PhillipsChatbot />
+                <PhillipsContactUsFloating />
+                <PhillipsFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="phillips/tv"
+            element={
+              <>
+                <PhillipsOffers />
+                <PhillipsNavbar />
+                <PhillipsTvComponent />
+                <PhillipsChatbot />
+                <PhillipsContactUsFloating />
+                <PhillipsFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="phillips/washing"
+            element={
+              <>
+                <PhillipsOffers />
+                <PhillipsNavbar />
+                <PhillipsWashingMachine />
+                <PhillipsChatbot />
+                <PhillipsContactUsFloating />
+                <PhillipsFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="phillips/microwave"
+            element={
+              <>
+                <PhillipsOffers />
+                <PhillipsNavbar />
+                <PhillipsMicroWave />
+                <PhillipsChatbot />
+                <PhillipsContactUsFloating />
+                <PhillipsFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="phillips/Refrigerator"
+            element={
+              <>
+                <PhillipsOffers />
+                <PhillipsNavbar />
+                <PhillipsRefrigerator />
+                <PhillipsChatbot />
+                <PhillipsContactUsFloating />
+                <PhillipsFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="phillips/DishWasher"
+            element={
+              <>
+                <PhillipsOffers />
+                <PhillipsNavbar />
+                <PhillipsDishwasher />
+                <PhillipsChatbot />
+                <PhillipsContactUsFloating />
+                <PhillipsFooter />
+              </>
+            }
+          />
+
+          {/* Tvcomponent Page */}
+          <Route
+            path="phillips/aircondition"
+            element={
+              <>
+                <PhillipsOffers />
+                <PhillipsNavbar />
+                <PhillipsAirConditioner />
+                <PhillipsChatbot />
+                <PhillipsContactUsFloating />
+                <PhillipsFooter />
+              </>
+            }
+          />
+
+          {/* All products Page */}
+          <Route
+            path="Phillips/products"
+            element={
+              <>
+                <PhillipsOffers />
+                <PhillipsNavbar />
+                <PhillipsAllProducts />
+                <PhillipsChatbot />
+                <PhillipsContactUsFloating />
+                <PhillipsFooter />
+              </>
+            }
+          />
+          {/* PHILLIPS COMPONENTS END HERE -------------------------->  */}
         </Routes>
       </Router>
     </AppContext.Provider>
