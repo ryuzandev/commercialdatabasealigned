@@ -104,6 +104,13 @@ function Navbar() {
             <Nav.Link as={Link} to="/ifb/book-now" className="text-white">
               Specimen
             </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/ifb/exoticdeletecards"
+              className="text-white"
+            >
+              Forward-Specimen
+            </Nav.Link>
             {/* <Nav.Link as={Link} to="/troubleshoot" className="text-white">
               Trouble-Shoot
             </Nav.Link> */}

@@ -88,6 +88,13 @@ function Navbar() {
             <Nav.Link as={Link} to="/sony/book-now" className="text-black">
               Specimen
             </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/sony/exoticdeletecards"
+              className="text-black"
+            >
+              Forward-Specimen
+            </Nav.Link>
           </Nav>
 
           <Form

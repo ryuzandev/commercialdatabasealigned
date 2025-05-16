@@ -20,6 +20,7 @@ import Refrigerator from "./lgcomponents/components/Refrigerator";
 import Dishwasher from "./lgcomponents/components/DishWasher";
 import Chatbot from "./lgcomponents/components/AssestComponents/Chatbot";
 import ContactUsFloating from "./lgcomponents/components/AssestComponents/ContactUsFloating";
+import ExoticAUtoDeleteCards from "./lgcomponents/components/ExoticAutoDeleteCards";
 // importing Components FOR lgcomponents------------------------------> end
 
 // SAMSUNG COMPONENTS START HERE------------------------------------------->
@@ -41,6 +42,7 @@ import SamRefrigerator from "./samsungcomponents/components/Refrigerator";
 import SamDishwasher from "./samsungcomponents/components/DishWasher";
 import SamChatbot from "./samsungcomponents/components/AssestComponents/Chatbot";
 import SamContactUsFloating from "./samsungcomponents/components/AssestComponents/ContactUsFloating";
+import SamExoticAUtoDeleteCards from "./samsungcomponents/components/ExoticAutoDeleteCards";
 // SAMSUNG COMPONENTS END HERE----------------------------------------------->
 
 // SONY COMPONENTS START HERE------------------------------------------->
@@ -57,6 +59,7 @@ import SonyMusicStereo from "./sonycomponents/components/MusicStereo";
 import SonyPlayStation from "./sonycomponents/components/PlayStation";
 import SonyChatbot from "./sonycomponents/components/AssestComponents/Chatbot";
 import SonyContactUsFloating from "./sonycomponents/components/AssestComponents/ContactUsFloating";
+import SonyExoticAUtoDeleteCards from "./sonycomponents/components/ExoticAutoDeleteCards";
 // SONY COMPONENTS END HERE----------------------------------------------->
 
 // Importing Components FOR ifbcomponents------------------------------> start
@@ -78,6 +81,7 @@ import IfbRefrigerator from "./ifb/components/Refrigerator";
 import IfbDishwasher from "./ifb/components/DishWasher";
 import IfbChatbot from "./ifb/components/AssestComponents/Chatbot";
 import IfbContactUsFloating from "./ifb/components/AssestComponents/ContactUsFloating";
+import IfbExoticAUtoDeleteCards from "./ifb/components/ExoticAutoDeleteCards";
 // importing Components FOR ifbcomponents------------------------------> end
 // Importing Components FOR ONIDAcomponents------------------------------> start
 import OnidaOffers from "./onida/components/Offers";
@@ -98,6 +102,7 @@ import OnidaRefrigerator from "./onida/components/Refrigerator";
 import OnidaDishwasher from "./onida/components/DishWasher";
 import OnidaChatbot from "./onida/components/AssestComponents/Chatbot";
 import OnidaContactUsFloating from "./onida/components/AssestComponents/ContactUsFloating";
+import OnidaExoticAUtoDeleteCards from "./onida/components/ExoticAutoDeleteCards";
 // importing Components FOR ONIDAcomponents------------------------------> end
 // Importing Components FOR WHIRLPOOLcomponents------------------------------> start
 import WpOffers from "./whirlpool/components/Offers";
@@ -118,6 +123,7 @@ import WpRefrigerator from "./whirlpool/components/Refrigerator";
 import WpDishwasher from "./whirlpool/components/DishWasher";
 import WpChatbot from "./whirlpool/components/AssestComponents/Chatbot";
 import WpContactUsFloating from "./whirlpool/components/AssestComponents/ContactUsFloating";
+import WpExoticAUtoDeleteCards from "./whirlpool/components/ExoticAutoDeleteCards";
 // importing Components FOR WHIRLPOOLcomponents------------------------------> end
 // Importing Components FOR PHILLIPScomponents------------------------------> start
 import PhillipsOffers from "./phillips/components/Offers";
@@ -138,10 +144,12 @@ import PhillipsRefrigerator from "./phillips/components/Refrigerator";
 import PhillipsDishwasher from "./phillips/components/DishWasher";
 import PhillipsChatbot from "./phillips/components/AssestComponents/Chatbot";
 import PhillipsContactUsFloating from "./phillips/components/AssestComponents/ContactUsFloating";
+import PhillipsExoticAUtoDeleteCards from "./phillips/components/ExoticAutoDeleteCards";
 // importing Components FOR PHILLIPScomponents------------------------------> end
 
 // DEMO COMPONENTS START---------->
 import GoogleClone from "./democomponents/GoogleClone";
+import Hombale from "./democomponents/Homebale";
 // DEMO COMPONENTS END  ---------->
 
 // Context Resource
@@ -151,70 +159,23 @@ import { createContext } from "react";
 export const AppContext = createContext();
 
 function App() {
-  // console.log(ProductData);
-  // --> book now
-  const [book, setBook] = useState([
-    {
-      id: 1,
-      name: "John Doe",
-      email: "john.doe@example.com",
-      phone: "123-456-7890",
-      service: "Television Repair",
-      preferredDate: "2024-12-20",
-      preferredTime: "10:00 AM",
-      address: "123 Main St, City, Country",
-      comments: "Please handle the screen with care.",
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      email: "jane.smith@example.com",
-      phone: "987-654-3210",
-      service: "Washing Machine Repair",
-      preferredDate: "2024-12-21",
-      preferredTime: "2:00 PM",
-      address: "456 Oak St, City, Country",
-      comments: "The washing machine is making noise.",
-    },
-  ]);
-
-  // --> Trouble shoot
-  const [trouble, settrouble] = useState([
-    {
-      id: 1,
-      name: "John Doe",
-      email: "john.doe@example.com",
-      phone: "123-456-7890",
-      service: "Television",
-      issue: "Screen flickering",
-      description: "The screen flickers intermittently during usage.",
-      preferredDate: "2024-12-20",
-      preferredTime: "10:00 AM",
-      address: "123 Main St, City, Country",
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      email: "jane.smith@example.com",
-      phone: "987-654-3210",
-      service: "Washing Machine",
-      issue: "Not spinning",
-      description: "The washing machine starts but doesn’t spin the clothes.",
-      preferredDate: "2024-12-21",
-      preferredTime: "2:00 PM",
-      address: "456 Oak St, City, Country",
-    },
-  ]);
-
   return (
-    <AppContext.Provider value={{ book, trouble, setBook, settrouble }}>
+    <AppContext.Provider value={{}}>
       <Router>
         <Routes>
           <Route
-            path="googleclone/"
+            path="commercialdatabasealigned/"
             element={
               <>
                 <GoogleClone />
+              </>
+            }
+          />
+          <Route
+            path="homebale/"
+            element={
+              <>
+                <Hombale />
               </>
             }
           />
@@ -257,6 +218,21 @@ function App() {
                 <Offers />
                 <Navbar />
                 <TroubleshootCards />
+                <Chatbot />
+                <ContactUsFloating />
+                <Footer />
+              </>
+            }
+          />
+
+          {/* Troubleshoot Page */}
+          <Route
+            path="lg/exoticdeletecards"
+            element={
+              <>
+                <Offers />
+                <Navbar />
+                <ExoticAUtoDeleteCards />
                 <Chatbot />
                 <ContactUsFloating />
                 <Footer />
@@ -415,6 +391,21 @@ function App() {
             }
           />
 
+          {/* Troubleshoot Page */}
+          <Route
+            path="samsung/exoticdeletecards"
+            element={
+              <>
+                <SamOffers />
+                <SamNavbar />
+                <SamExoticAUtoDeleteCards />
+                <SamChatbot />
+                <SamContactUsFloating />
+                <SamFooter />
+              </>
+            }
+          />
+
           {/* Tvcomponent Page */}
           <Route
             path="samsung/tv"
@@ -565,6 +556,20 @@ function App() {
               </>
             }
           />
+          {/* Troubleshoot Page */}
+          <Route
+            path="sony/exoticdeletecards"
+            element={
+              <>
+                <SonyOffers />
+                <SonyNavbar />
+                <SonyExoticAUtoDeleteCards />
+                <SonyChatbot />
+                <SonyContactUsFloating />
+                <SonyFooter />
+              </>
+            }
+          />
 
           {/* Tvcomponent Page */}
           <Route
@@ -663,6 +668,20 @@ function App() {
                 <IfbOffers />
                 <IfbNavbar />
                 <IfbTroubleshootCards />
+                <IfbChatbot />
+                <IfbContactUsFloating />
+                <IfbFooter />
+              </>
+            }
+          />
+
+          <Route
+            path="ifb/exoticdeletecards"
+            element={
+              <>
+                <IfbOffers />
+                <IfbNavbar />
+                <IfbExoticAUtoDeleteCards />
                 <IfbChatbot />
                 <IfbContactUsFloating />
                 <IfbFooter />
@@ -814,6 +833,20 @@ function App() {
                 <OnidaOffers />
                 <OnidaNavbar />
                 <OnidaTroubleshootCards />
+                <OnidaChatbot />
+                <OnidaContactUsFloating />
+                <OnidaFooter />
+              </>
+            }
+          />
+          {/* Troubleshoot Page */}
+          <Route
+            path="onida/exoticdeletecards"
+            element={
+              <>
+                <OnidaOffers />
+                <OnidaNavbar />
+                <OnidaExoticAUtoDeleteCards />
                 <OnidaChatbot />
                 <OnidaContactUsFloating />
                 <OnidaFooter />
@@ -972,6 +1005,21 @@ function App() {
             }
           />
 
+          {/* Troubleshoot Page */}
+          <Route
+            path="whirlpool/exoticdeletecards"
+            element={
+              <>
+                <WpOffers />
+                <WpNavbar />
+                <WpExoticAUtoDeleteCards />
+                <WpChatbot />
+                <WpContactUsFloating />
+                <WpFooter />
+              </>
+            }
+          />
+
           {/* Tvcomponent Page */}
           <Route
             path="whirlpool/tv"
@@ -1116,6 +1164,20 @@ function App() {
                 <PhillipsOffers />
                 <PhillipsNavbar />
                 <PhillipsTroubleshootCards />
+                <PhillipsChatbot />
+                <PhillipsContactUsFloating />
+                <PhillipsFooter />
+              </>
+            }
+          />
+          {/* Troubleshoot Page */}
+          <Route
+            path="phillips/exoticdeletecards"
+            element={
+              <>
+                <PhillipsOffers />
+                <PhillipsNavbar />
+                <PhillipsExoticAUtoDeleteCards />
                 <PhillipsChatbot />
                 <PhillipsContactUsFloating />
                 <PhillipsFooter />

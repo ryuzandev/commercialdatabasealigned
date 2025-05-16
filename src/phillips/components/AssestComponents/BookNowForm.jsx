@@ -1,11 +1,10 @@
+// -------------------------ifb tuned extraction
 import React, { useContext, useState } from "react";
 import "../../componentsCss/BookNowModal.css";
-import { AppContext } from "../../../App";
-import axios from "axios";
+import { postData } from "../../firebaseDatabase/firestoreApi";
 
 function BookNowForm({ onClose }) {
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const { setBook } = useContext(AppContext);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -19,32 +18,34 @@ function BookNowForm({ onClose }) {
     file2: null,
     annualMaintenance: false,
     amcCondition: "",
-    companyMake: "",
+    companyMake: "IFB",
     customMake: "",
     city: "",
-    warranty:"",
+    warranty: "",
+    timestamp: "", // Added timestamp field
   });
 
   // Mapping services to relevant company makes
   const companyOptions = {
-    "Television service": [
-      "LG",
-      "SAMSUNG",
-      "PANASONIC",
-      "VU TELEVISION",
-      "SONY",
-      "TCL",
-      "REDMI",
-      "REALME",
-      "ONEPLUS",
-      "XIAOMI",
-      "BPL",
-      "ONIDA",
-      "MICROMAX",
-      "VIDEOCON",
-      "PHILIPS",
-      "TOSHIBHA",
-    ],
+    "Chimney service": [],
+    // "Television service": [
+    //   "LG",
+    //   "SAMSUNG",
+    //   "PANASONIC",
+    //   "VU TELEVISION",
+    //   "SONY",
+    //   "TCL",
+    //   "REDMI",
+    //   "REALME",
+    //   "ONEPLUS",
+    //   "XIAOMI",
+    //   "BPL",
+    //   "ONIDA",
+    //   "MICROMAX",
+    //   "VIDEOCON",
+    //   "PHILIPS",
+    //   "TOSHIBHA",
+    // ],
     "Washing Machine service": [
       "LG",
       "SAMSUNG",
@@ -94,7 +95,7 @@ function BookNowForm({ onClose }) {
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
-      ...(name === "service" ? { companyMake: "" } : {}), // Reset companyMake when service changes
+      ...(name === "service" ? { companyMake: "IFB" } : {}), // Reset companyMake when service changes
     }));
   };
 
@@ -115,73 +116,66 @@ function BookNowForm({ onClose }) {
     }));
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log("Form Data:", formData);
-  //   setBook((prevBook) => [...prevBook, formData]);
-  //   onClose();
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Debugging: Log file details
-    console.log("file1:", formData.file1);
-    if (formData.file1) {
-      console.log("file1 name:", formData.file1.name);
-      console.log("file1 type:", formData.file1.type);
-      console.log("file1 size:", formData.file1.size);
-    }
+    // Capture the current timestamp
+    const timestamp = new Date().toLocaleString(); // Gets the exact current date and time
+    console.log(timestamp);
 
-    console.log("file2:", formData.file2);
-    if (formData.file2) {
-      console.log("file2 name:", formData.file2.name);
-      console.log("file2 type:", formData.file2.type);
-      console.log("file2 size:", formData.file2.size);
-    }
+    // Debugging: Log file details
+    // console.log("file1:", formData.file1);
+    // if (formData.file1) {
+    //   console.log("file1 name:", formData.file1.name);
+    //   console.log("file1 type:", formData.file1.type);
+    //   console.log("file1 size:", formData.file1.size);
+    // }
+
+    // console.log("file2:", formData.file2);
+    // if (formData.file2) {
+    //   console.log("file2 name:", formData.file2.name);
+    //   console.log("file2 type:", formData.file2.type);
+    //   console.log("file2 size:", formData.file2.size);
+    // }
+
+    // setting time in form data
+    setFormData((prevData) => ({
+      ...prevData,
+      timestamp: timestamp, // Add timestamp to form data
+    }));
 
     // Debug entire formData object
     console.log("Full Form Data:", formData);
 
-    // You can now also proceed with uploading using FormData and axios
-    const payload = new FormData();
-    Object.entries(formData).forEach(([key, value]) => {
-      if (value !== null && value !== undefined) {
-        payload.append(key, value);
-      }
-    });
+    // ------------------------------------------------>
+    // Update formData to include timestamp
+    const updatedFormData = {
+      ...formData,
+      timestamp: timestamp, // Add timestamp to form data
+    };
 
+    console.log(updatedFormData);
+
+    // You can now also proceed with uploading using FormData and Firestore
     try {
-      const response = await axios.post(
-        "https://jsonplaceholder.typicode.com/posts",
-        payload,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      console.log("API Response:", response.data);
+      // Post data to Firestore
+      // await postData("ifbelectronics", formData);
+      await postData("ifbelectronics", updatedFormData);
+
       setShowConfirmation(true);
       setTimeout(() => {
         setShowConfirmation(false);
         onClose(); // Close the modal
       }, 5000);
     } catch (error) {
-      console.error("API Error:", error);
+      console.error("Error posting data:", error);
     }
-
-    setBook((prevBook) => [...prevBook, formData]);
-    // onClose();
   };
 
   return (
     <>
       <div className="booknow-modal-overlay">
         <div className="booknow-modal-content">
-          {/* <button className="booknow-close-button" onClick={onClose}>
-          ×
-        </button> */}
           <button
             className="btn-close booknow-close-button"
             onClick={onClose}
@@ -258,26 +252,7 @@ function BookNowForm({ onClose }) {
               </select>
             </label>
 
-            {/* Company Make Dropdown (Conditional Rendering) */}
-            {formData.service && (
-              // <label>
-              //   Company Make*:
-              //   <select
-              //     name="companyMake"
-              //     value={formData.companyMake}
-              //     onChange={handleInputChange}
-              //     required
-              //   >
-              //     <option value="">Select company</option>
-              //     {companyOptions[formData.service]?.map((company) => (
-              //       <option key={company} value={company}>
-              //         {company}
-              //       </option>
-              //     ))}
-              //     <option value="OTHERS">OTHERS</option>
-              //   </select>
-              // </label>
-
+            {/* {formData.service && (
               <label>
                 Brand* :
                 <input
@@ -288,9 +263,8 @@ function BookNowForm({ onClose }) {
                   required
                 />
               </label>
-            )}
+            )} */}
 
-            {/* Custom input if "OTHERS" is selected */}
             {formData.companyMake === "OTHERS" && (
               <label>
                 Provide your product make:
@@ -314,8 +288,6 @@ function BookNowForm({ onClose }) {
                 <option value="">Select Status</option>
                 <option value="Under Amc">Under Amc</option>
                 <option value="Amc Expired">Amc Expired</option>
-                {/* <option value="Under Warranty">Under Warranty</option> */}
-                {/* <option value="Warranty Expired">Warranty Expired</option> */}
               </select>
             </label>
             <label>
@@ -327,8 +299,6 @@ function BookNowForm({ onClose }) {
                 required
               >
                 <option value="">Select Status</option>
-                {/* <option value="Under Amc">Under Amc</option> */}
-                {/* <option value="Amc Expired">Amc Expired</option> */}
                 <option value="Under Warranty">Under Warranty</option>
                 <option value="Warranty Expired">Warranty Expired</option>
               </select>
@@ -372,14 +342,14 @@ function BookNowForm({ onClose }) {
                 onChange={handleInputChange}
               ></textarea>
             </label>
-            <label>
+            {/* <label>
               Upload Image 1:
               <input type="file" name="file1" onChange={handleFileChange} />
             </label>
             <label>
               Upload Image 2:
               <input type="file" name="file2" onChange={handleFileChange} />
-            </label>
+            </label> */}
 
             <button type="submit" className="finalButtons_submit">
               Submit
@@ -391,7 +361,6 @@ function BookNowForm({ onClose }) {
         </div>
       </div>
 
-      {/* module */}
       {showConfirmation && (
         <div className="troubleshoot-confirmation-modal">
           <div className="troubleshoot-confirmation-content">

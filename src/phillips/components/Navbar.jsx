@@ -107,6 +107,7 @@ function Navbar() {
             {/* <Nav.Link as={Link} to="/troubleshoot" className="text-white">
               Trouble-Shoot
             </Nav.Link> */}
+            
           </Nav>
 
           <Form

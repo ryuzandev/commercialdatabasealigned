@@ -107,6 +107,13 @@ function Navbar() {
             {/* <Nav.Link as={Link} to="/troubleshoot" className="text-white">
               Trouble-Shoot
             </Nav.Link> */}
+            <Nav.Link
+              as={Link}
+              to="/lg/exoticdeletecards"
+              className="text-white"
+            >
+              Forward-Specimen
+            </Nav.Link>
           </Nav>
 
           <Form

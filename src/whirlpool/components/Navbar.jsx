@@ -120,6 +120,13 @@ function Navbar() {
             <Nav.Link as={Link} to="/whirlpool/book-now" className="text-black">
               Specimen
             </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/whirlpool/exoticdeletecards"
+              className="text-black"
+            >
+              Forward-Specimen
+            </Nav.Link>
             {/* <Nav.Link as={Link} to="/troubleshoot" className="text-white">
               Trouble-Shoot
             </Nav.Link> */}
